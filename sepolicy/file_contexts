@@ -47,3 +47,7 @@
  
 # Ir
 /dev/peel_ir					u:object_r:lirc_device:s0
+
+# Root folders
+/firmware(/.*)?          u:object_r:firmware_file:s0
+/persist(/.*)?           u:object_r:persist_file:s0
