@@ -6,12 +6,12 @@
     "remote":      "github",
     "repository":  "mahajant99/vendor_xiaomi_sakura",
     "target_path": "vendor/xiaomi",
-    "branch":      "lineage-17.0"
+    "branch":      "lineage-17.1"
   },
   {
     "remote":      "github",
     "repository":  "mahajant99/kernel_xiaomi_msm8953-sakura",
     "target_path": "kernel/xiaomi/msm8953",
-    "branch":      "lineage-17.0"
+    "branch":      "lineage-17.1"
   }
 ]
