@@ -1,3 +1,4 @@
+#!/bin/bash
 #
 # Copyright (C) 2017 The LineageOS Project
 #
@@ -14,20 +15,13 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := $(call my-dir)
+set -e
 
-ifeq ($(TARGET_DEVICE),sakura)
-include $(call all-makefiles-under,$(LOCAL_PATH))
+# Required!
+export DEVICE=sakura
+export DEVICE_COMMON=msm8953-common
+export VENDOR=xiaomi
 
-WCNSS_MAC_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/wlan_mac.bin
-$(WCNSS_MAC_SYMLINK): $(LOCAL_INSTALLED_MODULE)
-	@echo "WCNSS MAC bin link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /mnt/vendor/persist/$(notdir $@) $@
+export DEVICE_BRINGUP_YEAR=2019
 
-ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_INI_SYMLINK) $(WCNSS_MAC_SYMLINK)
-
-
-endif
-
+./../../$VENDOR/$DEVICE_COMMON/extract-files.sh $@
