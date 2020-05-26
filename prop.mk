@@ -1,5 +1,5 @@
 #
-# system.prop for msm8953-common
+# system.prop for Xiaomi Sakura
 #
 
 # Audio
@@ -31,7 +31,11 @@ vendor.voice.conc.fallbackpath=deep-buffer \
 vendor.voice.path.for.pcm.voip=true \
 vendor.voice.playback.conc.disabled=true \
 vendor.voice.record.conc.disabled=false \
-vendor.voice.voip.conc.disabled=true
+vendor.voice.voip.conc.disabled=true \
+persist.vendor.audio.fluence.speaker=true \
+persist.vendor.audio.fluence.voicecall=true \
+persist.vendor.audio.fluence.voicerec=false \
+ro.vendor.audio.sdk.fluencetype=fluence
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -51,7 +55,9 @@ persist.camera.gyro.disable=0 \
 persist.camera.isp.clock.optmz=0 \
 persist.camera.stats.test=5 \
 persist.vendor.qti.telephony.vt_cam_interface=1 \
-vidc.enc.dcvs.extra-buff-count=2
+vidc.enc.dcvs.extra-buff-count=2 \
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap \
+persist.camera.dual.camera=0
 
 # Cne/Dpm
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -188,3 +194,12 @@ persist.vendor.usb.config.extra=none
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
 wifi.interface=wlan0
+
+# Dalvik
+PRODUCT_PROPERTY_OVERRIDES += \
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heapgrowthlimit=256m
+dalvik.vm.heapsize=512m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=4m
+dalvik.vm.heapmaxfree=8m
